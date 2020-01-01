@@ -1,0 +1,36 @@
+#error {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .img {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .ant-card {
+    transform: translateY(-60px);
+    min-width: 400px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+    border-color: rgba(0, 0, 0, 0.09);
+
+    .ant-divider {
+      margin-bottom: 0;
+    }
+
+    /deep/.ant-card-head {
+      text-align: center;
+    }
+
+    .ant-card-body .ant-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .login-form-forgot {
+      float: right;
+    }
+  }
+}

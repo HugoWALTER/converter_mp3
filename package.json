@@ -1,0 +1,80 @@
+{
+  "name": "ytconv",
+  "version": "1.0.0",
+  "description": "YT CONV",
+  "author": "Hugo",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HugoWALTER/hugowalter.github.io"
+  },
+  "scripts": {
+    "lint": "eslint --color --ext .js,.vue --ignore-path .gitignore .",
+    "commit": "git-cz",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "build-start": "run-s build start",
+    "generate": "nuxt generate",
+    "test": "start-server-and-test build-start http://localhost:3000 cy:run",
+    "test:ui": "start-server-and-test dev http://localhost:3000 cy:open",
+    "report": "nyc report --reporter=text"
+  },
+  "dependencies": {
+    "@bazzite/nuxt-netlify": "^0.1.1",
+    "@nuxtjs/axios": "^5.5.4",
+    "ant-design-vue": "^1.4.6",
+    "nuxt": "^2.11.0",
+    "nuxt-i18n": "^6.0.0",
+    "ytdl-core": "^1.0.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@cypress/code-coverage": "^1.10.1",
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^0.2.1",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-import": "^1.12.0",
+    "babel-plugin-istanbul": "^5.2.0",
+    "commitizen": "^4.0.3",
+    "cypress": "^3.4.1",
+    "cz-conventional-changelog": "3.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-standard": ">=13.0.1",
+    "eslint-plugin-cypress": "^2.6.1",
+    "eslint-plugin-import": ">=2.18.2",
+    "eslint-plugin-jest": ">=22.13.0",
+    "eslint-plugin-node": ">=9.1.0",
+    "eslint-plugin-nuxt": ">=0.4.3",
+    "eslint-plugin-promise": ">=4.2.1",
+    "eslint-plugin-standard": ">=4.0.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "husky": "^3.0.5",
+    "istanbul-lib-coverage": "^2.0.5",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^14.1.1",
+    "sass-loader": "^7.1.0",
+    "start-server-and-test": "^1.10.2"
+  },
+  "nyc": {
+    "exclude": [
+      ".nuxt/**/*"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
